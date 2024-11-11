@@ -1,0 +1,29 @@
+routes > services > data layer
+
+make sure to import services from routes
+
+env file is important
+
+main.py is first make a router and use 
+
+display
+data_access > product_dba has the json start up to display
+add product
+services > product services has the add product bit its surounded with #
+filter
+todo > todos.html (todo routes has the code for the filter)
+make sure to use comments
+
+
+#############################################################
+from lab to run the code
+
+python -m venv venv --prompt="lab6"
+
+venv\Scripts\activate
+
+pip install fastapi uvicorn jinja2 python-multipart httpx
+
+uvicorn app.main:app --reload --port=5000
+##############################################################
+

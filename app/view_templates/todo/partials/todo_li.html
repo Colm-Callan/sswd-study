@@ -1,0 +1,18 @@
+<li id="{{ todo.id - 1 }}" class="list-group-item d-flex justify-content-between align-items-start">
+  <div class="ms-2 me-auto">
+    <div class="fw-bold">id: {{ todo.id }}</div>
+    {{ todo.details }}
+    <p class="mb-2">
+      <!-- replace list item with form -->
+      <button type="button" class="btn btn-sm btn-warning" hx-target="closest li" hx-swap="outerHTML"
+        hx-get="/todo/update/{{ todo.id }}" hx-trigger="click"><i class="bi bi-pencil-square"></i>
+      </button>
+      <!-- for delete the hx delete is what to call and the hx target is where to go after deleting hx swap is also inner or outer-->
+      <button type="button" hx-confirm="confirm delete if id {{ todo.id }}" class="btn btn-sm btn-danger" hx-target="#todoList" hx-swap="innerHTML"
+        hx-delete="/todo/{{  todo.id }}" hx-trigger="click"><i class="bi bi-trash"></i>
+      </button>
+    </p>
+  </div>
+  <!-- this is the if statement for the button green or red if it is true or false -->
+  <span class="badge {% if todo.completed %} text-bg-success {% else %} text-bg-primary {% endif %}}  rounded-pill">completed: {{ todo.completed }}</span>
+</li>
